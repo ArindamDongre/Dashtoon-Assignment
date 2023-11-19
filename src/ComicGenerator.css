@@ -1,0 +1,15 @@
+/* ComicGenerator.css */
+
+.comic-generator {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  height: calc(100vh - 120px);
+  background-color: rgb(41, 66, 105);
+  position: relative;
+}

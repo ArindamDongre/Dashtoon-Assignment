@@ -1,0 +1,127 @@
+/* ComicStrip.css */
+
+/* .comic-strip class styles the container for comic panels and loading */
+.comic-strip {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 0;
+}
+
+/* The .buffering class sets opacity for the buffering state */
+.buffering {
+  opacity: 0.7;
+}
+
+/* Styles for the loading spinner */
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #333;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+/* Styles for the container of comic panels */
+.comic-panels {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+
+/* Styles for individual comic panels */
+.comic-panel {
+  flex: 0 0 calc(20% - 20px);
+  border: 1px solid #2a2a2a;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Styles for images inside comic panels */
+.comic-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Styles for the download comic button container */
+.download-comic-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Styles for the download button */
+.download-comic-button button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Styles for the disabled state of the download button */
+.download-comic-button button:disabled {
+  background-color: #007bff; /* Same as the default color */
+  cursor: not-allowed;
+}
+
+/* Styles for hover effect on the download button when not disabled */
+.download-comic-button button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.error-message {
+  text-align: center;
+  color: #ff0000; /* Red color for error message */
+  font-size: 18px;
+  margin-top: 20px;
+}
+/* Existing styles for the comic strip and download button */
+
+/* Add media query for comic strip responsiveness */
+
+@media (max-width: 767px) {
+  .comic-panel {
+    flex: 0 0 calc(50% - 20px);
+    border: 1px solid #2a2a2a;
+    position: relative;
+  }
+}
+
+@media (max-width: 500px) {
+  .comic-panel {
+    flex: 0 0 calc(100% - 20px);
+    border: 1px solid #2a2a2a;
+    position: relative;
+  }
+
+  /* Adjust styles for download button at larger screens */
+  .download-comic-button button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+}
